@@ -2,24 +2,28 @@
     position: relative;
 
     &__item {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: var(--link-size);
-        height: var(--link-size);
-        margin-top: calc(var(--link-size) / -2);
-        margin-left: calc(var(--link-size) / -2);
+      width: var(--link-size);
+      height: var(--link-size);
+      margin-top: getSize(2);
 
-        $item-count: 5;
-        --angle: #{360 / $item-count}deg;
+      @media (min-width: $breakpoint) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin-top: calc(var(--link-size) / -2);
+          margin-left: calc(var(--link-size) / -2);
 
-        @for $i from 1 through $item-count {
-          &:nth-of-type(#{$i}) {
-            --rotation: calc(140deg + var(--angle) * var(--item-count));
-            transform:
-              rotate(var(--rotation))
-              translate(calc(var(--link-size) + #{getSize(2)}))
-              rotate(calc(var(--rotation) * -1));
+          $item-count: 5;
+          --angle: #{360 / $item-count}deg;
+
+          @for $i from 1 through $item-count {
+            &:nth-of-type(#{$i}) {
+              --rotation: calc(140deg + var(--angle) * var(--item-count));
+              transform:
+                rotate(var(--rotation))
+                translate(calc(var(--link-size) + #{getSize(2)}))
+                rotate(calc(var(--rotation) * -1));
+            }
           }
         }
     }
@@ -85,17 +89,18 @@
     &__text {
         position: absolute;
         width: 100%;
-        top: 50%;
+        bottom: getSize(1.8);
         left: 0;
         text-align: center;
         height: getSize(2);
         font-size: getSize(2);
         text-align: 0;
-        animation: text 300ms ease-in-out forwards;
         display: block;
 
         @media (hover) {
           display: none;
+          bottom: getSize(8);
+          animation: text 300ms ease-in-out forwards;
         }
     }
 }

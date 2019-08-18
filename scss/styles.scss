@@ -1,13 +1,19 @@
+$breakpoint: 40em;
+
 @function getSize($size) {
     @return calc(var(--base-grid) * #{$size});
 }
 
 :root {
-  --base-grid: 1vmin;
-  --colour-white:#{darken(#FFF, 5%)};
+  --base-grid: 2vmin;
+  --breakpoint: 480px;
   --colour-white: #FFF;
   --colour-black: #{lighten(#000, 5%)};
   --link-size: #{getSize(20)};
+
+  @media (min-width: $breakpoint) {
+    --base-grid: 1vmin;
+  }
 }
 
 @import "_reset";

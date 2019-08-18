@@ -3,7 +3,6 @@ html{
 }
 
 body {
-    height: 100%;
     min-height: 100%;
     position: relative;
     background-color: #ececec;
@@ -17,4 +16,5 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Josefin Sans', sans-serif;
+    color: var(--colour-black);
 }
