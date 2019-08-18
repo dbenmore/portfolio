@@ -1,0 +1,21 @@
+@function getSize($size) {
+    @return calc(var(--base-grid) * #{$size});
+}
+
+:root {
+  --base-grid: 1vmin;
+  --colour-white:#{darken(#FFF, 5%)};
+  --colour-white: #FFF;
+  --colour-black: #{lighten(#000, 5%)};
+  --link-size: #{getSize(20)};
+
+  // @media (min-width: 680px) {
+  //   --base-grid: 8px;
+  // }
+}
+
+@import "_reset";
+@import "_box-sizing";
+@import "_layout";
+@import "_links";
+@import "_title";

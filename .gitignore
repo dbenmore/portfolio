@@ -1,0 +1,9 @@
+# Node
+node_modules/
+
+# Other
+.tmp
+.DS_Store
+.npm_install_log
+npm-debug.log
+.eslintrc*

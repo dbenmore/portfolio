@@ -1,0 +1,20 @@
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    background-color: #ececec;
+    background-image: linear-gradient(#FAFAFA 1px, transparent 1px),
+                      linear-gradient(90deg, #FAFAFA 1px, transparent 1px),
+                      linear-gradient(#F0F0F0 1px, transparent 1px),
+                      linear-gradient(90deg, #F0F0F0 1px, transparent 1px);
+    background-size: getSize(10) getSize(10), getSize(10) getSize(10), getSize(1) getSize(1), getSize(1) getSize(1);
+    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
