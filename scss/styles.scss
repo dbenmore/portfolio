@@ -8,10 +8,6 @@
   --colour-white: #FFF;
   --colour-black: #{lighten(#000, 5%)};
   --link-size: #{getSize(20)};
-
-  // @media (min-width: 680px) {
-  //   --base-grid: 8px;
-  // }
 }
 
 @import "_reset";
