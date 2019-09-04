@@ -1,5 +1,14 @@
 .links {
-    position: relative;
+    color: var(--colour-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+
+    &__list {
+        position: relative;
+    }
 
     &__item {
       width: var(--link-size);
@@ -43,14 +52,14 @@
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        color: var(--colour-black);
+        color: inherit;
 
         &:after {
             content: "";
             background-color: transparent;
             width: var(--link-size);
             height: var(--link-size);
-            border: 1px dashed var(--colour-black);
+            border: 2px dashed var(--colour-white);
             display: block;
             border-radius: 50%;
             position: absolute;

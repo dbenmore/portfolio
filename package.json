@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass:watch": "node-sass -w scss/ -o build/css/ --output-style compressed"
+    "sass:watch": "node-sass -w scss/ -o build/css/ --output-style compressed",
+    "serve": "http-server ./"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "http-server": "^0.11.1",
     "node-sass": "^4.12.0"
   },
   "engines": {

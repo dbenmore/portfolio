@@ -1,20 +1,26 @@
-html{
-    height: 100%;
+html {
+    background-image: linear-gradient(-170deg,
+     #064997 20%, #105ba7);
+    background-position: right;
+
 }
 
 body {
     min-height: 100%;
     position: relative;
-    background-color: #ececec;
-    background-image: linear-gradient(#FAFAFA 1px, transparent 1px),
-                      linear-gradient(90deg, #FAFAFA 1px, transparent 1px),
-                      linear-gradient(#F0F0F0 1px, transparent 1px),
-                      linear-gradient(90deg, #F0F0F0 1px, transparent 1px);
-    background-size: getSize(10) getSize(10), getSize(10) getSize(10), getSize(1) getSize(1), getSize(1) getSize(1);
-    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-family: 'Josefin Sans', sans-serif;
-    color: var(--colour-black);
+    color: var(--colour-white);
+    background-image: linear-gradient(to left, #2b67ac 3px, transparent 3px),
+                      linear-gradient(#2b67ac 3px, transparent 3px),
+                      linear-gradient(to left, rgba(#2b67ac, 0.4) 1px, transparent 1px),
+                      linear-gradient(#2b67ac 1px, transparent 1px),
+                      linear-gradient(to left, rgba(#2b67ac, 0.4) 1px, transparent 1px),
+                      linear-gradient(#2b67ac 1px, transparent 1px);
+    background-size: 112px 112px, // 4 * 28 - tried aligning these the grid with getSize but safari was being weird
+                     112px 112px,
+                     56px 56px, // 2 * 28
+                     56px 56px,
+                     28px 28px,
+                     28px 28px;
+    // background-position: right, top, calc(100% - 3px), top, calc(100% - 3px), top;
 }

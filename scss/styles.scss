@@ -9,6 +9,7 @@ $breakpoint: 40em;
   --breakpoint: 480px;
   --colour-white: #FFF;
   --colour-black: #{lighten(#000, 5%)};
+  --colour-blue: #064997;
   --link-size: #{getSize(20)};
 
   @media (min-width: $breakpoint) {
@@ -19,5 +20,6 @@ $breakpoint: 40em;
 @import "_reset";
 @import "_box-sizing";
 @import "_layout";
-@import "_links";
 @import "_title";
+@import "_links";
+@import "_articles";
