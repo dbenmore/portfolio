@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass:watch": "node-sass -w scss/ -o build/css/ --output-style compressed",
-    "serve": "http-server ./"
+    "build": "parcel build src/*.pug --out-dir docs",
+    "dev": "parcel src/*.pug"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^0.11.1",
-    "node-sass": "^4.12.0"
+    "pug": "^2.0.4",
+    "sass": "^1.22.12"
   },
   "engines": {
     "node": "10.15.3",
     "npm": "6.4.1"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.3"
   }
 }

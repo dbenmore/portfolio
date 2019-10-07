@@ -2,7 +2,6 @@ html {
     background-image: linear-gradient(-170deg,
      #064997 20%, #105ba7);
     background-position: right;
-
 }
 
 body {
@@ -22,5 +21,43 @@ body {
                      56px 56px,
                      28px 28px,
                      28px 28px;
-    // background-position: right, top, calc(100% - 3px), top, calc(100% - 3px), top;
+}
+
+.page-animate-in {
+  animation: fade-in .4s ease-in-out .15s both;
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.page-title {
+  font-size: getSize(8);
+  text-align: center;
+  padding: getSize(6) 0 getSize(6);
+}
+
+.home-link {
+  color: var(--colour-white);
+  font-size: getSize(2);
+  text-decoration: none;
+  margin-left: getSize(1);
+  margin-top: getSize(1);
+  height: getSize(4);
+  display: inline-flex;
+  align-items: center;
+
+  &__icon {
+    width: getSize(2);
+    fill: var(--colour-white);
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -0.2em;
+    margin-right: getSize(.5);
+  }
 }

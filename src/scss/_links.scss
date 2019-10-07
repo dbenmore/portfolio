@@ -22,19 +22,13 @@
           margin-top: calc(var(--link-size) / -2);
           margin-left: calc(var(--link-size) / -2);
 
-          $item-count: 5;
-          --angle: #{360 / $item-count}deg;
-
-          @for $i from 1 through $item-count {
-            &:nth-of-type(#{$i}) {
-              --rotation: calc(140deg + var(--angle) * var(--item-count));
-              transform:
-                rotate(var(--rotation))
-                translate(calc(var(--link-size) + #{getSize(2)}))
-                rotate(calc(var(--rotation) * -1));
-            }
+          --angle: calc(360deg / var(--item-total));
+          --rotation: calc(140deg + var(--angle) * var(--item-count));
+          transform:
+            rotate(var(--rotation))
+            translate(calc(var(--link-size) + #{getSize(2)}))
+            rotate(calc(var(--rotation) * -1));
           }
-        }
     }
 
 
@@ -89,16 +83,27 @@
     }
 
     &__icon {
-        width: getSize(11);
-        height: getSize(11);
+        width: getSize(10);
+        height: getSize(10);
         transition: all 0.3s ease-in-out;
         fill: var(--colour-black);
+
+        &--articles,
+        &--mail {
+          width: getSize(9);
+          height: getSize(9);
+        }
+
+        &--linkedin {
+          width: getSize(8);
+          height: getSize(8);
+        }
     }
 
     &__text {
         position: absolute;
         width: 100%;
-        bottom: getSize(1.8);
+        bottom: getSize(2);
         left: 0;
         text-align: center;
         height: getSize(2);
@@ -108,7 +113,7 @@
 
         @media (hover) {
           display: none;
-          bottom: getSize(8);
+          bottom: getSize(8.5);
           animation: text 300ms ease-in-out forwards;
         }
     }
@@ -136,6 +141,6 @@
     }
     100% {
         opacity: 1;
-        transform: scale(1) translateY(getSize(5.5));
+        transform: scale(1) translateY(getSize(5));
     }
 }

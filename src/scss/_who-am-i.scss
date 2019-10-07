@@ -1,0 +1,10 @@
+.who-am-i {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transform: rotate(-90deg) translateY(calc(100vw - #{getSize(2)}));
+  transform-origin: left;
+  height: getSize(2);
+  line-height: getSize(2);
+  font-size: getSize(2);
+}

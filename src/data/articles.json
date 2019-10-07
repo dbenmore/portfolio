@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Coming soon...",
+    "url": "#",
+    "website": "",
+    "date": "Oct 2019",
+    "dateTime": "2019-10-31",
+    "comingSoon": true
+  },
+  {
+    "title": "Different approaches for&nbsp;creating a&nbsp;staggered animation",
+    "url": "https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/",
+    "website": "CSS-TRICKS",
+    "date": "27 Jun 2019",
+    "dateTime": "2019-06-27"
+  },
+  {
+    "title": "Website performance hackathon at&nbsp;giffgaff",
+    "url": "https://www.giffgaff.io/technology/web-performance-hackathon/",
+    "website": "giffgaff",
+    "date": "6 May 2019",
+    "dateTime": "2019-05-06"
+  }
+]
