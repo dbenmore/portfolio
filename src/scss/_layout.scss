@@ -59,5 +59,14 @@ body {
     vertical-align: middle;
     margin-top: -0.2em;
     margin-right: getSize(.5);
+    transition: transform 0.25s ease-out;
+  }
+
+  @media(hover) {
+    &:hover {
+      .home-link__icon {
+        transform: translateX(#{getSize(-.25)})
+      }
+    }
   }
 }

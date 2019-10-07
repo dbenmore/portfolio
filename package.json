@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build src/*.pug --out-dir docs",
+    "build": "rm -rf docs && parcel build src/*.pug --out-dir docs",
     "dev": "parcel src/*.pug"
   },
   "author": "",
