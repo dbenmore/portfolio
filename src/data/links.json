@@ -1,9 +1,9 @@
 [
   {
-    "text": "LinkedIn",
-    "url": "https://uk.linkedin.com/in/dbenmore",
-    "icon": "linkedin",
-    "external": true
+    "text": "Writing",
+    "url": "articles.pug",
+    "icon": "articles",
+    "external": false
   },
   {
     "text": "GitHub",
@@ -18,10 +18,10 @@
     "external": true
   },
   {
-    "text": "Writing",
-    "url": "articles.pug",
-    "icon": "articles",
-    "external": false
+    "text": "LinkedIn",
+    "url": "https://uk.linkedin.com/in/dbenmore",
+    "icon": "linkedin",
+    "external": true
   },
   {
     "text": "Say Hello",
