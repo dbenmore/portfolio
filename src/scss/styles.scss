@@ -10,7 +10,6 @@ $breakpoint: 40em;
   --colour-white: #FFF;
   --colour-black: #{lighten(#000, 10%)};
   --colour-blue: #064997;
-  --link-size: #{getSize(20)};
 
   @media (min-width: $breakpoint) {
     --base-grid: 8px;

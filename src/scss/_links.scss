@@ -1,4 +1,6 @@
 .links {
+    --link-size: #{getSize(20)};
+
     color: var(--colour-black);
     display: flex;
     justify-content: center;
@@ -87,17 +89,6 @@
         height: getSize(10);
         transition: all 0.3s ease-in-out;
         fill: var(--colour-black);
-
-        &--articles,
-        &--mail {
-          width: getSize(9);
-          height: getSize(9);
-        }
-
-        &--linkedin {
-          width: getSize(8);
-          height: getSize(8);
-        }
     }
 
     &__text {
