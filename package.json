@@ -1,23 +1,16 @@
 {
-  "name": "port",
+  "name": "port-2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "build": "rm -rf docs && parcel build src/*.pug --out-dir docs",
-    "dev": "parcel src/*.pug"
+    "build": "rm -rf docs && parcel build ./src/index.html ./src/**/*.html --out-dir docs",
+    "start": "parcel ./src/index.html ./src/**/*.html"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "pug": "^2.0.4",
-    "sass": "^1.22.12"
-  },
-  "engines": {
-    "node": "10.15.3",
-    "npm": "6.4.1"
-  },
-  "dependencies": {
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.3"
   }
 }
