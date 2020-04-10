@@ -162,10 +162,11 @@ main {
     position: absolute;
     top: getSize(3);
     left: getSize(3);
+    max-width: getSize(6);
 
     &__icon {
-      width: auto;
-      height: auto;
+      width: unset;
+      height: unset;
     }
   }
 }
