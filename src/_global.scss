@@ -82,7 +82,8 @@ body {
 	animation: body-fade-in .4s ease-in .15s both;
 }
 
-main {
+main,
+footer {
   grid-column: main;
 }
 
@@ -124,7 +125,6 @@ main {
 	line-height: getSize(2);
 	letter-spacing: 0.05em;
 	font-weight: 400;
-	margin-top: getSize(6);
 }
 
 @media (min-width: 520px) {
@@ -132,17 +132,18 @@ main {
   .title {
 		transform: translateX(getSize(-3));
 	}
+}
 
-	.who-am-i {
-		margin-top: 0;
-	  position: fixed;
-	  bottom: 0;
-	  left: 0;
-	  transform: rotate(-90deg) translateY(calc(100vw - #{getSize(2)}));
-	  transform-origin: left;
-	  height: getSize(2);
-	  font-size: 14px;
-	}
+@media (min-width: 520px) and (min-height: 420px) {
+  .who-am-i {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: rotate(-90deg) translateY(calc(100vw - #{getSize(2)}));
+    transform-origin: left;
+    height: getSize(2);
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 800px) {
