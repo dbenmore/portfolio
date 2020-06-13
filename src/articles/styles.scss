@@ -1,8 +1,6 @@
 @import "../_global";
 
 .articles {
-  --border-radius: 8px;
-
   display: grid;
   grid-row-gap: getSize(8);
   grid-column-gap: getSize(4);

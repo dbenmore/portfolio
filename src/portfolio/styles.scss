@@ -1,1 +1,40 @@
 @import "../_global";
+
+.portfolio-list {
+  $root: &;
+
+  display: grid;
+  grid-row-gap: getSize(4);
+  grid-column-gap: getSize(16);
+  grid-template-columns: 1fr 1fr;
+
+  &__article {
+    background-color: #ececec;
+    padding: getSize(6);
+    border-radius: var(--border-radius);
+    display: flex;
+  }
+
+  &__image {
+    width: 312px;
+    height: 312px;
+    flex: none;
+    border-radius: var(--border-radius);
+    margin-left: getSize(-12);
+    margin-right: getSize(3);
+  }
+
+  &__link {
+    margin-top: getSize(3);
+  }
+
+  &__description {
+    line-height: 1.6;
+  }
+
+  &__heading {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: getSize(3);
+  }
+}

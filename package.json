@@ -4,14 +4,14 @@
   "description": "",
   "scripts": {
     "clean": "rm -rf dist && rm -rf docs",
-    "build":  "npm run clean && parcel build ./src/index.html ./src/**/*.html --out-dir ./docs && cp ./src/CNAME ./docs",
-    "start": "npm run clean  && parcel ./src/index.html ./src/**/*.html"
+    "build": "npm run clean && parcel build ./src/index.html ./src/**/*.html --out-dir ./docs && cp ./src/CNAME ./docs",
+    "start": "npm run clean && parcel ./src/index.html ./src/**/*.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.26.3"
+    "sass": "^1.26.8"
   }
 }

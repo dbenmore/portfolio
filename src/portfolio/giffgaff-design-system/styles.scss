@@ -1,0 +1,48 @@
+@import "../../_global";
+
+.article-section {
+  display: flex;
+  align-items: flex-end;
+  margin-top: getSize(7);
+
+  &__image {
+    width: 66%;
+    margin-right: getSize(6);
+  }
+
+  &__caption {
+    font-size: fontSize(1);
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+
+    .article-section__image {
+      margin-right: 0;
+      margin-left: getSize(6);
+    }
+  }
+}
+
+
+.scoped-typography {
+  max-width: 32em;
+
+  &>:first-child {
+    margin-top: 0;
+  }
+
+  &>:last-child {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: fontSize(8);
+    font-weight: 800;
+    margin: 1em 0;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+}
