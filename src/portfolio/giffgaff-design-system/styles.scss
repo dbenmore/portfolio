@@ -2,7 +2,6 @@
 
 .article-section {
   display: flex;
-  align-items: flex-end;
   margin-top: getSize(7);
 
   &__image {
@@ -26,7 +25,9 @@
 
 
 .scoped-typography {
-  max-width: 32em;
+  > * {
+    max-width: 32em;
+  }
 
   &>:first-child {
     margin-top: 0;
@@ -42,7 +43,13 @@
     margin: 1em 0;
   }
 
-  p {
+  h3 {
+    font-size: fontSize(6);
+    font-weight: 700;
     margin: 1em 0;
+  }
+
+  p {
+    margin: 1.6em 0;
   }
 }
