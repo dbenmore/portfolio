@@ -1,0 +1,28 @@
+.link {
+  width: -moz-fit-content;
+  width: fit-content;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  height: getSize(7);
+  font-size: getSize(2);
+  font-weight: 700;
+  color: #23688a;
+  text-decoration: underline;
+
+  &__icon {
+    margin-left: getSize(.5);
+    width: getSize(3);
+    height: getSize(3);
+    transition: transform 400ms ease-out;
+    fill: #23688a;
+  }
+
+  @media(hover) {
+    &:hover {
+      .link__icon {
+        transform: translateX(#{getSize(.5)});
+      }
+    }
+  }
+}
