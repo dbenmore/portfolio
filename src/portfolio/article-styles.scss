@@ -3,8 +3,10 @@
 .info-box {
   margin-bottom: getSize(4);
   border-radius: var(--border-radius);
-  width: 32em;
-  font-size: fontSize(2);
+  border-left: getSize(1) solid;
+  padding: getSize(3);
+  background: #ececec;
+  max-width: 32em;
 
   div + div {
     margin-top: getSize(1);
@@ -12,6 +14,11 @@
 
   dt {
     font-weight: 600;
+  }
+
+  dt,
+  dd {
+    font-size: fontSize(2);
   }
 }
 
