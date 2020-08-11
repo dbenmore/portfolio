@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "clean": "rm -rf dist && rm -rf docs",
-    "build": "npm run clean && parcel build ./src/index.html ./src/**/*.html --out-dir ./docs && cp ./src/CNAME ./docs",
+    "build": "npm run clean && parcel build ./src/index.html ./src/**/*.html --out-dir ./docs && cp ./src/CNAME ./docs && cp ./src/sitemap.xml ./docs",
     "start": "npm run clean && parcel ./src/index.html ./src/**/*.html"
   },
   "keywords": [],
