@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pete</title>
+
+    <style>
+      :root {
+        --grid: 4px;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0e0e0e;
+      }
+
+      .pete {
+        width: calc(var(--grid) * 128);
+        height: calc(var(--grid) * 128);
+        display: block;
+        position: relative;
+        background-image: url('petes-mugshot.jpeg');
+      }
+
+      .eyes {
+        position: absolute;
+        height: calc(var(--grid) * 10);
+        width: calc(var(--grid) * 10);
+        top: calc(var(--grid) * 16);
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+
+      .eye {
+        position: absolute;
+        height: calc(var(--grid) * 14);
+        width: calc(var(--grid) * 14);
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 50%;
+        overflow: hidden;
+        -webkit-mask-image: -webkit-radial-gradient(white, black); /* fix for safari overflow:hidden and border raduis */
+      }
+
+      .eye--left {
+        top: calc(var(--grid) * 44);
+        left: calc(var(--grid) * -27);
+      }
+
+      .eye--right {
+        top: calc(var(--grid) * 44);
+        left: calc(var(--grid) * 6);
+      }
+
+      .pupil {
+        width: calc(var(--grid) * 6);
+        height: calc(var(--grid) * 6);
+        background-color: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        border-radius: 50%;
+      }
+
+      .pupil:after {
+        content: "";
+        width: calc(var(--grid) * 2);
+        height: calc(var(--grid) * 2);
+        border-radius: 50%;
+        position: absolute;
+        top: calc(var(--grid) / 2);
+        right: calc(var(--grid) / 2);
+        background-color: white;
+      }
+      </style>
+    </head>
+    <body>
+
+    <div class="pete">
+      <div class="eyes">
+        <div class="eye eye--left js-eye">
+          <div class="pupil js-pupil"></div>
+        </div>
+    
+        <div class="eye eye--right js-eye">
+          <div class="pupil js-pupil"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const eyes = document.querySelectorAll(".js-eye");
+      const pupils = document.querySelectorAll(".js-pupil");
+      const eyeRadius = 40;  // pupil max posistion - percentage from center
+      const maxPupilDistanceFromCenter = 45;  // pupil max posistion - percentage from center
+
+      function moveEyes(event) {
+        let offset = rightBetweenTheEyes(eyes);
+        let x = (event.clientX - offset.x) / window.innerWidth * 100;
+        let y = (event.clientY - offset.y) / window.innerHeight * 100;
+        let pupilDistanceFromCenter = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
+
+        if (pupilDistanceFromCenter >= maxPupilDistanceFromCenter) { // if pupil out of eye - dont panic
+          let angle = Math.atan(x/y);
+          let adjustedX = Math.sin(angle) * maxPupilDistanceFromCenter;
+          let adjustedY = Math.cos(angle) * maxPupilDistanceFromCenter;
+
+          if (y < 0) {
+            x = adjustedX * -1;
+            y = adjustedY * -1;
+          } else {
+            x = adjustedX;
+            y = adjustedY;
+          }
+        }
+
+        pupils.forEach(p => {
+          p.style.left = (x + 50) + '%'; // 50 is beacuse 50% is css center
+          p.style.top = (y + 50) + '%';
+        })
+
+        }
+
+        function rightBetweenTheEyes(eyes) {
+          let offset = {x:0,y:0};
+          let eye0Left =  eyes[0].getBoundingClientRect().left;
+          let eye0Top =  eyes[0].getBoundingClientRect().top;
+          let eye1Left =  eyes[1].getBoundingClientRect().left;
+          let eye1Top =  eyes[1].getBoundingClientRect().top;
+
+
+          offset.x = ((eye0Left + eye1Left) / 2) + eyeRadius;
+          offset.y = ((eye0Top + eye1Top) / 2) + eyeRadius;
+
+          return offset;
+        }
+
+        document.addEventListener("mousemove", moveEyes);
+    </script>
+  </body>
+</html>
