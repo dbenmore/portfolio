@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Pete</title>
+    <title>Bye traitor</title>
 
     <style>
       :root {
@@ -76,53 +76,77 @@
         right: calc(var(--grid) / 2);
         background-color: white;
       }
+
+      .mobile-message {
+        color: #fff;
+        font-family: sans-serif;
+      }
+
+      .pete {
+        display: none;
+      }
+
+      @media (min-width: 960px) {
+        .mobile-message {
+          display: none;
+        }
+
+        .pete {
+          display: block;
+        }
+      }
+
+
       </style>
     </head>
     <body>
 
-    <div class="pete">
-      <div class="eyes">
-        <div class="eye eye--left js-eye">
-          <div class="pupil js-pupil"></div>
-        </div>
-    
-        <div class="eye eye--right js-eye">
-          <div class="pupil js-pupil"></div>
+      <h1 class="mobile-message">
+        Yeah... this doesn't work on&nbsp;phones
+      <h1>
+
+      <div class="pete">
+        <div class="eyes">
+          <div class="eye eye--left js-eye">
+            <div class="pupil js-pupil"></div>
+          </div>
+      
+          <div class="eye eye--right js-eye">
+            <div class="pupil js-pupil"></div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <script>
-      const eyes = document.querySelectorAll(".js-eye");
-      const pupils = document.querySelectorAll(".js-pupil");
-      const eyeRadius = 40;  // pupil max posistion - percentage from center
-      const maxPupilDistanceFromCenter = 45;  // pupil max posistion - percentage from center
+      <script>
+        const eyes = document.querySelectorAll(".js-eye");
+        const pupils = document.querySelectorAll(".js-pupil");
+        const eyeRadius = 40;  // pupil max posistion - percentage from center
+        const maxPupilDistanceFromCenter = 45;  // pupil max posistion - percentage from center
 
-      function moveEyes(event) {
-        let offset = rightBetweenTheEyes(eyes);
-        let x = (event.clientX - offset.x) / window.innerWidth * 100;
-        let y = (event.clientY - offset.y) / window.innerHeight * 100;
-        let pupilDistanceFromCenter = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
+        function moveEyes(event) {
+          let offset = rightBetweenTheEyes(eyes);
+          let x = (event.clientX - offset.x) / window.innerWidth * 100;
+          let y = (event.clientY - offset.y) / window.innerHeight * 100;
+          let pupilDistanceFromCenter = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
 
-        if (pupilDistanceFromCenter >= maxPupilDistanceFromCenter) { // if pupil out of eye - dont panic
-          let angle = Math.atan(x/y);
-          let adjustedX = Math.sin(angle) * maxPupilDistanceFromCenter;
-          let adjustedY = Math.cos(angle) * maxPupilDistanceFromCenter;
+          if (pupilDistanceFromCenter >= maxPupilDistanceFromCenter) { // if pupil out of eye - dont panic
+            let angle = Math.atan(x/y);
+            let adjustedX = Math.sin(angle) * maxPupilDistanceFromCenter;
+            let adjustedY = Math.cos(angle) * maxPupilDistanceFromCenter;
 
-          if (y < 0) {
-            x = adjustedX * -1;
-            y = adjustedY * -1;
-          } else {
-            x = adjustedX;
-            y = adjustedY;
+            if (y < 0) {
+              x = adjustedX * -1;
+              y = adjustedY * -1;
+            } else {
+              x = adjustedX;
+              y = adjustedY;
+            }
           }
-        }
 
-        pupils.forEach(p => {
-          p.style.left = (x + 50) + '%'; // 50 is beacuse 50% is css center
-          p.style.top = (y + 50) + '%';
-        })
-
+          pupils.forEach(p => {
+            p.style.left = (x + 50) + '%'; // 50 is beacuse 50% is css center
+            p.style.top = (y + 50) + '%';
+          })
         }
 
         function rightBetweenTheEyes(eyes) {
@@ -140,6 +164,6 @@
         }
 
         document.addEventListener("mousemove", moveEyes);
-    </script>
+      </script>
   </body>
 </html>
