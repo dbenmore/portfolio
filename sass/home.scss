@@ -1,0 +1,164 @@
+@import "_global";
+
+a {
+  $width: getSize(12);
+  $height: getSize(12);
+  $borderRadius: getSize(2);
+
+  display: block;
+  width: $width;
+  height: $height;
+  position: relative;
+  border-radius: $borderRadius;
+  transform: rotateX(66deg) rotateZ(45deg);
+  text-decoration: none;
+  color: #444;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1;
+
+  span {
+    background-color: #ececec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: $borderRadius;
+    transition: transform 180ms ease-in-out;
+    transform-origin: bottom;
+  }
+
+  &:focus span,
+  &:active span {
+    transform: translateX(getSize(1.5)) translateY(getSize(1.5));
+  }
+
+  &:focus::before,
+  &:active::before {
+    clip-path: polygon(90% 0, 100% 0, 100% 100%, 0 100%, 0% 90%);
+    -webkit-clip-path: polygon(90% 0, 100% 0, 100% 100%, 0 100%, 0% 90%);
+    transition: clip-path 100ms linear, -webkit-clip-path 100ms linear;
+  }
+
+  &:focus::after,
+  &:active::after {
+    box-shadow: 10px -10px #bbb;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: getSize(15);
+    height: getSize(15);
+    position: absolute;
+    border-radius: $borderRadius;
+    top: getSize(.5);
+    left: getSize(.5);
+    z-index: -1;
+    background:
+    linear-gradient(45deg, transparent #{getSize(3)},  var(--light) #{getSize(3)}, var(--light) 50%, var(--dark) 50%, var(--dark) 146px, transparent 146px);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0% 0);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0% 0);
+    transition: clip-path 1000ms ease-out, -webkit-clip-path 1000ms ease-out;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: $width;
+    height: $height;
+    position: absolute;
+    border-radius: $borderRadius + 1px;
+    top: getSize(4);
+    left: getSize(4);
+    z-index:-2;
+    box-shadow: 14px -14px #bbb;
+    background: linear-gradient(45deg, var(--light) 50%, var(--dark) 50%);
+    transition: box-shadow 180ms ease-in-out;
+  }
+}
+
+.intro {
+  max-width: getSize(60);
+  line-height: 1.6;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+p + p {
+  margin-top: 1.6em;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.links__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: getSize(3);
+}
+
+.links__item:nth-child(1) {
+  top: getSize(6);
+  left: getSize(3);
+  --light: #2f8ab7;
+  --dark: #23688a;
+}
+
+.links__item:nth-child(2) {
+  top: getSize(3);
+  left: 50%;
+  --light: #ffa001;
+  --dark: #be7929;
+}
+
+.links__item:nth-child(3) {
+  top: getSize(16);
+  left: 33%;
+  --light: #195e32;
+  --dark: #124827;
+}
+
+.links__item:nth-child(4) {
+  top: getSize(23);
+  left: 70%;
+  --light: #7c2852;
+  --dark: #5f1f3d;
+}
+
+.links__item:nth-child(5) {
+  top: getSize(29);
+  left: 8%;
+  --light: #f1606b;
+  --dark: #a42f39;
+}
+
+.links__item:nth-child(6) {
+  top: getSize(40);
+  left: 44%;
+  --light: #1f328f;
+  --dark: #09143e;
+}
+
+@media (min-width: 520px) {
+  .links__list {
+    display: block;
+    height: getSize(53);
+    margin-top: 0;
+  }
+
+  .links__item {
+    position: absolute;
+  }
+}
+
+@media (min-width: 1140px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: getSize(6);
+  }
+}

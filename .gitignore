@@ -1,11 +1,7 @@
 # Node
 node_modules/
-dist/
+build/
 .cache/
 
 # Other
-.tmp
 .DS_Store
-.npm_install_log
-npm-debug.log
-.eslintrc*

@@ -159,7 +159,7 @@ footer {
 }
 
 @media (min-width: 800px) {
-	.back-link,,
+	.back-link,
   .title {
 		transform: translateX(getSize(-6));
 	}
@@ -194,5 +194,5 @@ footer {
 	}
 }
 
-@import "assets/scss/_cta";
-@import "assets/scss/_link";
+@import "./_cta";
+@import "./_link";

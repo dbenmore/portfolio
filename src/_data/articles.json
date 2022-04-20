@@ -1,0 +1,30 @@
+[
+    {
+        "href": "https://blog.nucleus.design/empowering-teams-to-create-multiple-column-layouts/",
+        "title": "Empowering teams to create multiple column layouts",
+        "date": "2022-02-14",
+        "dateHuman": "14 Feb 2022",
+        "platform": "Nucleus Design System"
+    },
+    {
+        "href": "https://www.giffgaff.io/tech/introducing-giffgaffs-design-system/",
+        "title": "Introducing giffgaff's design system",
+        "date": "2019-11-14",
+        "dateHuman": "14 Nov 2019",
+        "platform": "giffgaff.io"
+    },
+    {
+        "href": "https://css-tricks.com/different-approaches-for-creating-a-staggered-animation/",
+        "title": "Different approaches for creating a staggered animation",
+        "date": "2019-06-27",
+        "dateHuman": "27 Jun 2019",
+        "platform": "CSS-TRICKS"
+    },
+    {
+        "href": "https://www.giffgaff.io/tech/web-performance-hackathon/",
+        "title": "Running a website performance hackathon",
+        "date": "2019-05-06",
+        "dateHuman": "6 May 2019",
+        "platform": "giffgaff.io"
+    }
+]
