@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/favicon.ico');
   eleventyConfig.addPassthroughCopy('./src/CNAME');
   eleventyConfig.addPassthroughCopy('./src/sitemap.xml');
+  eleventyConfig.addPassthroughCopy('./paige/**/*');
 
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
